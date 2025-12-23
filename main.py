@@ -11,7 +11,7 @@ def normalize_phone_number(value: Any) -> Optional[str]:
     if hasattr(value, "phone"):
         value_str = str(value.phone)
 
-    cleaned = re.sub(r'\D', '', value_str)
+    cleaned = re.sub(r'[^a-zA-Z0-9]', '', value_str)
     
     return cleaned
 
